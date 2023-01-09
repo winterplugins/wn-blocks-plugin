@@ -18,4 +18,29 @@ class Plugin extends PluginBase
             'icon'        => 'icon-file-text-o'
         ];
     }
+
+    public function registerNavigation(): array
+    {
+        return [
+            'blocks' => [
+                'label'       => 'dimsog.blocks::lang.plugin.name',
+                'url'         => Backend::url('dimsog/blocks/blocks'),
+                'icon'        => 'icon-file-text-o',
+                'permissions' => ['*'],
+                'order'       => 500,
+                'sideMenu' => [
+                    'blocks' => [
+                        'label'       => 'dimsog.blocks::lang.plugin.name',
+                        'icon'        => 'icon-file-text-o',
+                        'url'         => Backend::url('dimsog/blocks/blocks'),
+                    ],
+                    'categories' => [
+                        'label'       => 'dimsog.blocks::lang.models.category.label_plural',
+                        'icon'        => 'icon-th-list',
+                        'url'         => Backend::url('dimsog/blocks/categories'),
+                    ]
+                ]
+            ]
+        ];
+    }
 }
