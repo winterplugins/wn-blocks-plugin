@@ -11,5 +11,13 @@ return [
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ],
+        'block' => [
+            'label' => 'Block',
+            'label_plural' => 'Blocks',
+        ],
+        'category' => [
+            'label' => 'Category',
+            'label_plural' => 'Categories',
+        ],
     ],
 ];
