@@ -15,6 +15,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('dimsog_blocks_categories', static function (Blueprint $table): void {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->timestamps();
             $table->string('name');
         });
     }

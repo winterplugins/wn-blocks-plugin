@@ -15,6 +15,7 @@ class CreateBlocksTable extends Migration
         Schema::create('dimsog_blocks_blocks', static function (Blueprint $table): void {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->timestamps();
             $table->unsignedInteger('category_id');
             $table->string('name');
             $table->string('code')->unique();
