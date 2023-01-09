@@ -22,6 +22,7 @@ class CreateCategoriesTable extends Migration
 
     public function down()
     {
+        Schema::dropIfExists('dimsog_blocks_blocks');
         Schema::dropIfExists('dimsog_blocks_categories');
     }
 }
