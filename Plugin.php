@@ -15,7 +15,7 @@ class Plugin extends PluginBase
             'name'        => 'dimsog.blocks::lang.plugin.name',
             'description' => 'dimsog.blocks::lang.plugin.description',
             'author'      => 'Dimsog',
-            'icon'        => 'icon-search'
+            'icon'        => 'icon-file-text-o'
         ];
     }
 }
