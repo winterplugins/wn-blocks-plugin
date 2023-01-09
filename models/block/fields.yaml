@@ -1,0 +1,8 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: 'dimsog.blocks::lang.models.general.id'
+        disabled: true
