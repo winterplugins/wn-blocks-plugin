@@ -8,21 +8,15 @@ use Cms\Classes\ComponentBase;
 
 class Block extends ComponentBase
 {
-    /**
-     * Gets the details for the component
-     */
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
-            'name'        => 'Block Component',
-            'description' => 'No description provided yet...'
+            'name'        => 'dimsog.blocks::lang.components.block.name',
+            'description' => ''
         ];
     }
 
-    /**
-     * Returns the properties provided by the component
-     */
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [];
     }

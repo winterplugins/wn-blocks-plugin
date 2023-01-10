@@ -5,6 +5,11 @@ return [
         'name' => 'Blocks',
         'description' => 'Visual block plugin for WinterCMS',
     ],
+    'components' => [
+        'block' => [
+            'name' => 'Blocks'
+        ]
+    ],
     'models' => [
         'general' => [
             'id' => 'ID',

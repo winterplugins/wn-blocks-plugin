@@ -5,6 +5,11 @@ return [
         'name' => 'Блоки',
         'description' => 'Визуальный редактор блоков для WinterCMS'
     ],
+    'components' => [
+        'block' => [
+            'name' => 'Блоки'
+        ]
+    ],
     'models' => [
         'general' => [
             'id' => 'ID',
