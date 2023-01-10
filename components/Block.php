@@ -18,6 +18,12 @@ class Block extends ComponentBase
         ];
     }
 
+    public function onRun(): void
+    {
+        $this->controller->addJs('/plugins/dimsog/blocks/assets/script.js', 'Dimsog.Blocks');
+        $this->controller->addCss('/plugins/dimsog/blocks/assets/style.css', 'Dimsog.Blocks');
+    }
+
     public function onRender(): void
     {
         $this->page['model'] = BlockModel::findByIdOrCode(
