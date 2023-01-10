@@ -6,14 +6,7 @@ columns:
     id:
         label: 'dimsog.blocks::lang.models.general.id'
         searchable: true
-    created_at:
-        label: 'dimsog.blocks::lang.models.general.created_at'
-        type: datetime
+        width: '100px'
+    name:
+        label: 'dimsog.blocks::lang.models.general.name'
         searchable: true
-        sortable: true
-        invisible: true
-    updated_at:
-        label: 'dimsog.blocks::lang.models.general.updated_at'
-        type: datetime
-        searchable: true
-        sortable: true
