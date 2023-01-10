@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dimsog\Blocks\Components;
 
 use Cms\Classes\ComponentBase;
+use Dimsog\Blocks\Models\Block as BlockModel;
 
 class Block extends ComponentBase
 {
@@ -14,6 +15,14 @@ class Block extends ComponentBase
             'name'        => 'dimsog.blocks::lang.components.block.name',
             'description' => ''
         ];
+    }
+
+    public function onRender(): void
+    {
+        $this->page['model'] = BlockModel::findByIdOrCode(
+            (int) $this->property('id'),
+            $this->property('code')
+        );
     }
 
     public function defineProperties(): array

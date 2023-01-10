@@ -1,3 +1,5 @@
-<p>This is the default markup for component Block</p>
-
-<small>You can delete this file if you want</small>
+{% if model is not empty %}
+<div class="block-item block-{{ model.id }}">
+    {{ model.text | raw }}
+</div>
+{% endif %}
