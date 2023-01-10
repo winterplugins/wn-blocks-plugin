@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dimsog\Blocks;
 
 use Backend;
+use Dimsog\Blocks\Components\Block;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -41,6 +42,13 @@ class Plugin extends PluginBase
                     ]
                 ]
             ]
+        ];
+    }
+
+    public function registerComponents(): array
+    {
+        return [
+            Block::class => 'block'
         ];
     }
 }
