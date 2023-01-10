@@ -71,4 +71,10 @@ class Block extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+
+    public function getCategoryIdOptions(): array
+    {
+        return Category::lists('name', 'id');
+    }
 }
