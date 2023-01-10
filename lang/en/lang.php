@@ -15,6 +15,7 @@ return [
         'block' => [
             'label' => 'Block',
             'label_plural' => 'Blocks',
+            'code' => 'Code'
         ],
         'category' => [
             'label' => 'Category',

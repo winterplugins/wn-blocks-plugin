@@ -15,6 +15,7 @@ return [
         'block' => [
             'label' => 'Блок',
             'label_plural' => 'Блоки',
+            'code' => 'Код'
         ],
         'category' => [
             'label' => 'Категория',
