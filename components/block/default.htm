@@ -1,5 +1,5 @@
 {% if model is not empty %}
-<div class="block-item block-item-{{ model.id }}">
+<div class="{% if isEditable %}app-block-item {% endif %}block-item block-item-{{ model.id }}"{% if isEditable %} data-block-id="{{ model.id }}"{% endif %}>
     {{ model.text | raw }}
 </div>
 {% endif %}
