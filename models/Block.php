@@ -75,6 +75,17 @@ class Block extends Model
     public $attachMany = [];
 
 
+    public static function findByIdOrCode(?int $id, ?string $code): ?static
+    {
+        if (empty($id) && empty($code)) {
+            return null;
+        }
+        if (!empty($id)) {
+            return static::find($id);
+        }
+        return static::where('code', $code)->first();
+    }
+
     public function getCategoryIdOptions(): array
     {
         return Category::lists('name', 'id');
