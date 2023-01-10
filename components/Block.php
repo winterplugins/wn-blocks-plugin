@@ -18,6 +18,15 @@ class Block extends ComponentBase
 
     public function defineProperties(): array
     {
-        return [];
+        return [
+            'id' => [
+                'title' => 'dimsog.blocks::lang.components.block.id',
+                'type' => 'string'
+            ],
+            'code' => [
+                'title' => 'dimsog.blocks::lang.components.block.code',
+                'type' => 'string'
+            ]
+        ];
     }
 }

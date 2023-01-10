@@ -7,7 +7,9 @@ return [
     ],
     'components' => [
         'block' => [
-            'name' => 'Блоки'
+            'name' => 'Блоки',
+            'code' => 'Код',
+            'id' => 'ID'
         ]
     ],
     'models' => [
