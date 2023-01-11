@@ -9,7 +9,9 @@ return [
         'block' => [
             'name' => 'Блоки',
             'code' => 'Код',
-            'id' => 'ID'
+            'id' => 'ID',
+            'save' => 'Сохранить',
+            'close' => 'Close'
         ]
     ],
     'models' => [

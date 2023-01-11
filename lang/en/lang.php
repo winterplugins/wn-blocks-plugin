@@ -9,7 +9,9 @@ return [
         'block' => [
             'name' => 'Blocks',
             'code' => 'Code',
-            'id' => 'ID'
+            'id' => 'ID',
+            'save' => 'Save',
+            'close' => 'Close'
         ]
     ],
     'models' => [

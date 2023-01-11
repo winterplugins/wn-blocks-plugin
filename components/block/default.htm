@@ -2,4 +2,18 @@
 <div class="{% if isEditable %}app-block-item {% endif %}block-item block-item-{{ model.id }}"{% if isEditable %} data-block-id="{{ model.id }}"{% endif %}>
     {{ model.text | raw }}
 </div>
+
+{% if isEditable %}
+<div class="app-block-item-panel app-block-item-panel-{{ model.id }}">
+    <div>{{ model.name }}</div>
+    <div>
+        <button type="button" class="app-block-item-panel__button">
+            {{ 'dimsog.blocks::lang.components.block.save' | trans }}
+        </button>
+        <button type="button" class="app-block-item-panel__button">
+            {{ 'dimsog.blocks::lang.components.block.close' | trans }}
+        </button>
+    </div>
+</div>
+{% endif %}
 {% endif %}

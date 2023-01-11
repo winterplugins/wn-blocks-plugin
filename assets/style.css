@@ -1,0 +1,38 @@
+.app-block-item:hover {
+    outline: 1px solid #9f9f9f;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.app-block-item-panel {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #5975ff;
+    width: 100%;
+    padding: 10px;
+    color: #FFF;
+}
+
+.app-block-item-panel--show {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-block-item-panel__button {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #788fff;
+    padding: 5px 15px;
+}
+
+.app-block-item-panel__button:hover {
+    background: #8498ff;
+}
+
+.app-block-item-panel__button:active {
+    background: #7d93ff;
+}
