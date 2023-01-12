@@ -1,7 +1,13 @@
-.app-block-item:hover {
+.app-block-item:not(.app-block-item--active):hover {
     outline: 1px solid #9f9f9f;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
+}
+
+.app-block-item--active {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #5975ff;
 }
 
 .app-block-item-panel {

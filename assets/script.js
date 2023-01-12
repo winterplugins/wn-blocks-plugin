@@ -12,6 +12,7 @@ $(function () {
 
         $scope
             .attr('contenteditable', true)
+            .addClass('app-block-item--active')
             .focus();
         $panel.addClass('app-block-item-panel--show');
     });
