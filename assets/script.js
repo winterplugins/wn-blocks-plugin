@@ -10,8 +10,9 @@ $(function () {
         }
         const $panel = $('.app-block-item-panel-' + blockId);
 
-        $scope.attr('contenteditable', true);
-        $scope.focus();
+        $scope
+            .attr('contenteditable', true)
+            .focus();
         $panel.addClass('app-block-item-panel--show');
     });
 });
