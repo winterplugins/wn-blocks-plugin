@@ -1,13 +1,8 @@
 $(function () {
-    const editors = new Map();
-
     $('.app-block-item').on('click', function (e) {
         e.preventDefault();
         const $scope = $(this);
         const blockId = $scope.data('block-id');
-        if (editors.has(blockId)) {
-            return;
-        }
         const $panel = $('.app-block-item-panel-' + blockId);
 
         $scope
