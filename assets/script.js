@@ -3,7 +3,6 @@ $(function () {
 
     $('.app-block-item').on('click', function (e) {
         e.preventDefault();
-        e.stopPropagation();
         const $scope = $(this);
         const blockId = $scope.data('block-id');
         if (editors.has(blockId)) {
@@ -12,6 +11,7 @@ $(function () {
         const $panel = $('.app-block-item-panel-' + blockId);
 
         $scope.attr('contenteditable', true);
+        $scope.focus();
         $panel.addClass('app-block-item-panel--show');
     });
 });
