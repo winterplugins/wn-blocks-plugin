@@ -1,11 +1,14 @@
 $(function () {
+    let $activeBlockItem = null;
+    let activeBlockId = null;
+
     $('.app-block-item').on('click', function (e) {
         e.preventDefault();
-        const $scope = $(this);
-        const blockId = $scope.data('block-id');
-        const $panel = $('.app-block-item-panel-' + blockId);
+        $activeBlockItem = $(this);
+        activeBlockId = $activeBlockItem.data('block-id');
+        const $panel = $('.app-block-item-panel-' + activeBlockId);
 
-        $scope
+        $activeBlockItem
             .attr('contenteditable', true)
             .addClass('app-block-item--active')
             .focus();
