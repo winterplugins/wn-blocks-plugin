@@ -46,13 +46,12 @@ class Block extends ComponentBase
         if (!$this->isEditable()) {
             return [];
         }
-        $blockId = (int) post('block_id');
-        $block = BlockModel::find($blockId);
+        $block = $this->findBlockFromPostRequest();
         if (empty($block)) {
             return [];
         }
         return [
-            '#app-block-item-' . $blockId => $block->text
+            '#app-block-item-' . $block->id => $block->text
         ];
     }
 
@@ -81,5 +80,10 @@ class Block extends ComponentBase
     private function isEditable(): bool
     {
         return BackendAuth::check();
+    }
+
+    private function findBlockFromPostRequest(): ?BlockModel
+    {
+        return BlockModel::find((int) post('block_id'));
     }
 }
