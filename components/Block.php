@@ -41,6 +41,21 @@ class Block extends ComponentBase
         $this->page['isEditable'] = $this->isEditable();
     }
 
+    public function onFetchBlockContent(): array
+    {
+        if (!$this->isEditable()) {
+            return [];
+        }
+        $blockId = (int) post('block_id');
+        $block = BlockModel::find($blockId);
+        if (empty($block)) {
+            return [];
+        }
+        return [
+            '#app-block-item-' . $blockId => $block->text
+        ];
+    }
+
     public function onUploadImage()
     {
         if (!$this->isEditable()) {
