@@ -55,6 +55,26 @@ class Block extends ComponentBase
         ];
     }
 
+    public function onSaveBlockContent(): array
+    {
+        if (!$this->isEditable()) {
+            return [
+                'success' => false
+            ];
+        }
+        $block = $this->findBlockFromPostRequest();
+        if (empty($block)) {
+            return [
+                'success' => false
+            ];
+        }
+        $block->text = (string) post('text');
+        $block->save();
+        return [
+            'success' => true
+        ];
+    }
+
     public function onUploadImage()
     {
         if (!$this->isEditable()) {
