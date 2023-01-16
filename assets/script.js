@@ -25,21 +25,36 @@ $(function () {
             if (block.id === null) {
                 return resolve();
             }
-            if (block.haveChanges && confirm(messages.saveBeforeClosing)) {
-                return onSaveActiveBlockContent()
-                    .then(() => closeCurrentBlockWithoutSaving());
+            if (!block.haveChanges) {
+                closeCurrentBlockWithoutSaving()
+                return resolve();
             }
-            closeCurrentBlockWithoutSaving()
-            resolve();
+            if (confirm(messages.saveBeforeClosing)) {
+                return onSaveActiveBlockContent()
+                    .then(() => {
+                        closeCurrentBlockWithoutSaving();
+                        resolve();
+                    });
+            } else {
+                return restoreActiveBlockContent()
+                    .then(() => {
+                        closeCurrentBlockWithoutSaving();
+                        resolve();
+                    })
+            }
         });
     }
 
     function restoreActiveBlockContent() {
-        $.request('block::onFetchBlockContent', {
-            loading: $.wn.stripeLoadIndicator,
-            data: {
-                block_id: block.id
-            }
+        return new Promise((resolve) => {
+            $.request('block::onFetchBlockContent', {
+                loading: $.wn.stripeLoadIndicator,
+                data: {
+                    block_id: block.id
+                }
+            }).then(() => {
+                resolve();
+            });
         });
     }
 
@@ -60,7 +75,12 @@ $(function () {
         });
     }
 
-    function openBlock($node) {
+    $('.app-block-item').on('click', function (e) {
+        e.preventDefault();
+        const $node = $(this);
+        if ($node.data('block-id') === block.id) {
+            return;
+        }
         closeCurrentBlock()
             .then(() => {
                 block.$node = $node;
@@ -77,12 +97,6 @@ $(function () {
                     });
                 block.$panel.addClass('app-block-item-panel--show');
             });
-    }
-
-    $('.app-block-item').on('click', function (e) {
-        e.preventDefault();
-        restoreActiveBlockContent();
-        openBlock($(this));
     });
 
     $('.app-block-save').on('click', function (e) {
