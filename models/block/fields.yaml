@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    category_id:
+        type: dropdown
+        label: 'dimsog.blocks::lang.models.category.label'
+    name:
+        label: 'dimsog.blocks::lang.models.general.name'
+        required: true
+        span: auto
+    code:
+        label: 'dimsog.blocks::lang.models.block.code'
+        required: true
+        span: auto
+    text:
+        type: richeditor
+        size: giant

@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: 'dimsog.blocks::lang.models.general.id'
+        searchable: true
+        width: '100px'
+    category_id:
+        label: dimsog.blocks::lang.models.category.label
+        relation: category
+        select: name
+        width: '250px'
+    name:
+        label: 'dimsog.blocks::lang.models.general.name'
+    code:
+        label: 'dimsog.blocks::lang.models.block.code'
