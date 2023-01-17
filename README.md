@@ -4,6 +4,7 @@ Allows you to edit blocks stored in database on the front-end pages.
 ### Features
 * backend editor
 * front-end editor
+* the ability to add your custom CSS classes
 
 ### Language support
 * English

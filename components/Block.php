@@ -39,6 +39,7 @@ class Block extends ComponentBase
             $this->property('code')
         );
         $this->page['isEditable'] = $this->isEditable();
+        $this->page['cssClass'] = $this->property('cssClass');
     }
 
     public function onFetchBlockContent(): array
@@ -92,6 +93,10 @@ class Block extends ComponentBase
             ],
             'code' => [
                 'title' => 'dimsog.blocks::lang.components.block.code',
+                'type' => 'string'
+            ],
+            'class' => [
+                'title' => 'dimsog.blocks::lang.components.block.class',
                 'type' => 'string'
             ]
         ];

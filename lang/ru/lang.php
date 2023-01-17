@@ -11,7 +11,8 @@ return [
             'code' => 'Код',
             'id' => 'ID',
             'save' => 'Сохранить',
-            'close' => 'Close'
+            'close' => 'Close',
+            'class' => 'CSS класс'
         ]
     ],
     'models' => [
