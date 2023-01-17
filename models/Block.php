@@ -1,5 +1,6 @@
 <?php namespace Dimsog\Blocks\Models;
 
+use Dimsog\Blocks\Classes\BlocksCache;
 use Model;
 
 /**
@@ -75,15 +76,30 @@ class Block extends Model
     public $attachMany = [];
 
 
-    public static function findByIdOrCode(?int $id, ?string $code): ?static
+    public static function findByCode(string $code): ?static
     {
-        if (empty($id) && empty($code)) {
-            return null;
+        $block = BlocksCache::instance()->findByCode($code);
+        if (!empty($block)) {
+            return $block;
         }
-        if (!empty($id)) {
-            return static::find($id);
+        $block = static::where('code', $code)->first();
+        if (!empty($block)) {
+            BlocksCache::instance()->add($block);
         }
-        return static::where('code', $code)->first();
+        return $block;
+    }
+
+    public static function findById(int $id): ?static
+    {
+        $block = BlocksCache::instance()->findById($id);
+        if (!empty($block)) {
+            return $block;
+        }
+        $block = static::find($id);
+        if (!empty($block)) {
+            BlocksCache::instance()->add($block);
+        }
+        return $block;
     }
 
     public function getCategoryIdOptions(): array

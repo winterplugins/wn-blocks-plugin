@@ -13,6 +13,11 @@ return [
             'save' => 'Сохранить',
             'close' => 'Закрыть',
             'class' => 'CSS класс'
+        ],
+        'blocks_preloader' => [
+            'name' => 'Blocks Preloader',
+            'code' => 'Код',
+            'id' => 'ID'
         ]
     ],
     'models' => [
