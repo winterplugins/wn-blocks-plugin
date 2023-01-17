@@ -34,11 +34,15 @@ class Block extends ComponentBase
 
     public function onRender(): void
     {
-        $this->page['model'] = BlockModel::findByIdOrCode(
-            (int) $this->property('id'),
-            $this->property('code')
-        );
+        $block = null;
+        if (!empty($this->property('code'))) {
+            $block = BlockModel::findByCode($this->property('code'));
+        } elseif (!empty($this->property('id'))) {
+            $block = BlockModel::findById((int) $this->property('id'));
+        }
+        $this->page['model'] = $block;
         $this->page['isEditable'] = $this->isEditable();
+        $this->page['cssClass'] = trim($this->property('class'));
     }
 
     public function onFetchBlockContent(): array
@@ -92,6 +96,10 @@ class Block extends ComponentBase
             ],
             'code' => [
                 'title' => 'dimsog.blocks::lang.components.block.code',
+                'type' => 'string'
+            ],
+            'class' => [
+                'title' => 'dimsog.blocks::lang.components.block.class',
                 'type' => 'string'
             ]
         ];

@@ -2,3 +2,6 @@
   - First version of Visual Block plugin
   - create_categories_table.php
   - create_blocks_table.php
+1.0.1:
+  - The ability to add your own CSS classes
+  - 'Added Blocks Preloader component'

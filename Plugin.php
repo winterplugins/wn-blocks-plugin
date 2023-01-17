@@ -6,6 +6,7 @@ namespace Dimsog\Blocks;
 
 use Backend;
 use Dimsog\Blocks\Components\Block;
+use Dimsog\Blocks\Components\BlocksPreloader;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -48,7 +49,8 @@ class Plugin extends PluginBase
     public function registerComponents(): array
     {
         return [
-            Block::class => 'block'
+            Block::class => 'block',
+            BlocksPreloader::class => 'blocksPreloader'
         ];
     }
 }
