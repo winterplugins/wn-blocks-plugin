@@ -5,6 +5,7 @@ Allows you to edit blocks stored in database on the front-end pages.
 * backend editor
 * front-end editor
 * the ability to add your custom CSS classes
+* Blocks preloader (cache)
 
 ### Language support
 * English
@@ -27,6 +28,26 @@ pages/home.htm
 title = "Demonstration"
 url = "/"
 layout = "default"
+
+[block]
+
+==
+
+{% component 'block' code='block1' %}
+
+{% component 'block' code='block2' class='foo-bar' %}
+```
+
+### Using with Blocks Preloader component
+All blocks are loaded with a single SQL query
+```html
+title = "Demonstration"
+url = "/"
+layout = "default"
+
+[blocksPreloader]
+id = "10, 11, 12"
+code = "block1, block2"
 
 [block]
 
