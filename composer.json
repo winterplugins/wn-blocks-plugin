@@ -1,7 +1,7 @@
 {
     "name": "dimsog/wn-blocks-plugin",
     "type": "winter-plugin",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Visual block editor for WinterCMS",
     "keywords": ["winter visual blocks editor"],
     "license": "MIT",
