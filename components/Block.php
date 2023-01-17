@@ -39,7 +39,7 @@ class Block extends ComponentBase
             $this->property('code')
         );
         $this->page['isEditable'] = $this->isEditable();
-        $this->page['cssClass'] = $this->property('cssClass');
+        $this->page['cssClass'] = trim($this->property('class'));
     }
 
     public function onFetchBlockContent(): array
