@@ -8,6 +8,7 @@ Allows you to edit blocks stored in database on the front-end pages.
 
 ### Language support
 * English
+* Russian
 
 ### Supported versions
 Please check: https://www.php.net/supported-versions.php
@@ -31,5 +32,5 @@ layout = "default"
 
 ==
 
-{% component 'block' code="block1" %}
+{% component 'block' code='block1' %}
 ```
