@@ -6,6 +6,7 @@
 {% if isEditable %}
 <div class="app-block-item-panel app-block-item-panel-{{ model.id }}">
     <div>{{ model.name }}</div>
+    <div class="app-block-item-panel__toolbar"></div>
     <div>
         <button type="button" class="app-block-save app-block-item-panel__button">
             {{ 'dimsog.blocks::lang.components.block.save' | trans }}
